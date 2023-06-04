@@ -1,7 +1,10 @@
 {
-  "name": "css-sort",
-  "displayName": "css-sort",
-  "description": "",
+  "name": "sort-css-properties",
+  "displayName": "Sort CSS",
+  "description": "Sort CSS Properties",
+  "publisher": "piyushsarkar",
+  "author": "Piyush Sarkar <iampiyushsarkar@gmail.com>",
+  "license": "MIT",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
@@ -9,35 +12,162 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:sass",
+    "onLanguage:less"
+  ],
   "main": "./out/extension.js",
+  "icon": "images/icon.png",
+  "scripts": {
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "watch": "npm run esbuild-base -- --sourcemap --watch",
+    "compile": "npm run esbuild-base -- --sourcemap",
+    "tsc-compile": "tsc -p ./",
+    "tsc-watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "test-compile": "tsc -p ./"
+  },
   "contributes": {
     "commands": [
       {
-        "command": "css-sort.helloWorld",
-        "title": "Hello World"
+        "category": "Sort CSS",
+        "command": "sortcss.run",
+        "title": "Run"
+      },
+      {
+        "category": "Sort CSS",
+        "command": "toggle-sort-on-save",
+        "title": "Toggle sort on save"
       }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    ],
+    "keybindings": [
+      {
+        "key": "Alt+s",
+        "command": "sortcss.run",
+        "when": "editorLangId == 'css' || editorLangId == 'scss' || editorLangId == 'less'"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "CSS - Sort CSS",
+      "properties": {
+        "sortcss.sortOnSave": {
+          "order": 0,
+          "type": "boolean",
+          "default": false,
+          "description": "Sort the CSS properties on save."
+        },
+        "sortcss.sortingStrategy": {
+          "order": 1,
+          "type": "string",
+          "enumItemLabels": [
+            "Concentric CSS",
+            "Alphabetical",
+            "SMACSS",
+            "Manual"
+          ],
+          "enum": [
+            "concentric-css",
+            "alphabetical",
+            "smacss",
+            "manual"
+          ],
+          "enumDescriptions": [
+            "Order properties applying outside the box model, moving inward to intrinsic changes.",
+            "Order in a simple alphabetical manner from a - z.",
+            "Order from most important, flow affecting properties, to least important properties."
+          ],
+          "default": "concentric-css",
+          "description": "CSS sorting orders"
+        },
+        "sortcss.ignoredFiles": {
+          "order": 2,
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "Files to ignore",
+          "markdownDescription": "Ignore files or path. Example: `[ 'sample.css', 'src' ]`"
+        },
+        "sortcss.manualOrder": {
+          "order": 3,
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string",
+            "enum": [
+              "all",
+              "display",
+              "position",
+              "grid",
+              "flex",
+              "order",
+              "float",
+              "columns",
+              "page",
+              "transform",
+              "translate",
+              "rotate",
+              "scale",
+              "perspective",
+              "perspective-origin",
+              "appearance",
+              "visibility",
+              "opacity",
+              "mask",
+              "filter",
+              "animation",
+              "transition",
+              "cursor",
+              "box-sizing",
+              "contain",
+              "container",
+              "margin",
+              "inset",
+              "outline",
+              "box-shadow",
+              "border",
+              "background",
+              "padding",
+              "aspect-ratio",
+              "width",
+              "height",
+              "overflow",
+              "color",
+              "font"
+            ]
+          },
+          "markdownDescription": "Manual CSS sorting order "
+        }
+      }
+    }
   },
   "devDependencies": {
-    "@types/vscode": "^1.77.0",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/postcss-less": "^4.0.2",
+    "@types/vscode": "^1.77.0",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
+    "@vscode/test-electron": "^2.3.0",
+    "esbuild": "^0.17.19",
     "eslint": "^8.36.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
-    "typescript": "^4.9.5",
-    "@vscode/test-electron": "^2.3.0"
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "css-declaration-sorter": "^7.0.0",
+    "postcss": "^8.4.21",
+    "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.6"
   }
 }
