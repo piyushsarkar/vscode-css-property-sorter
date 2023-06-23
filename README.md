@@ -4,34 +4,27 @@ This extension allows you to sort css properties in your CSS, SCSS and LESS file
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Sort Using Shortcut
+Shortcut on MacOs: `option` + `s` and on Windows/Linux: `ctrl` + `s`
 
-For example if there is an image subfolder under your extension project workspace:
+![Sort Using Sortcut](images/sort_using_shortcut.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+### Sort Using Command Palette
+![Sort Using Command Palette](images/sort_using_command_palette.gif) 
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Sort On Save
+This will sort the file whenever you save a css/scss/less file.
+![Sort On Save](images/sort_on_save.gif) 
 
+### Sort Selection
+![Sort Selection](images/sort_selection.gif) 
 
 ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-
-## For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- `sortcss.sortOnSave`: Enable or disable sorting on save (default: `false`).
+- `sortcss.sortingStrategy`: Choose sorting strategy from `concentric-css`, `alphabetical` or `smacss` (default: `concentric-css`).
+- `sortcss.ignoredFiles`: Ignore files or path. Example: `[ 'sample.css', 'src' ]`
+- `sortcss.manualOrder`: Manual CSS sorting order.
 
 **Enjoy!**
