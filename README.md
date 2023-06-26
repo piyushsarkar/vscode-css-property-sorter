@@ -5,7 +5,7 @@ This extension allows you to sort css properties in your CSS, SCSS and LESS file
 ## Features
 
 ### Sort Using Shortcut
-Shortcut on MacOs: `option` + `s` and on Windows/Linux: `ctrl` + `s`
+Shortcut on MacOs: `option` + `s` and on Windows/Linux: `alt` + `s`
 
 ![Sort Using Sortcut](images/sort_using_shortcut.gif)
 
