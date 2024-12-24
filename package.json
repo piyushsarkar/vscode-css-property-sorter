@@ -3,9 +3,9 @@
   "displayName": "Sort CSS",
   "description": "Sort CSS Properties",
   "publisher": "piyushsarkar",
-  "author": "Piyush Sarkar <iampiyushsarkar@gmail.com>",
+  "author": "Piyush Sarkar",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/piyushsarkar/vscode-css-property-sorter.git"
