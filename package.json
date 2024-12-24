@@ -155,23 +155,23 @@
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@types/postcss-less": "^4.0.2",
-    "@types/vscode": "^1.77.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.2",
+    "@types/postcss-less": "^4.0.6",
+    "@types/vscode": "^1.96.0",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
-    "@vscode/test-electron": "^2.3.0",
-    "esbuild": "^0.17.19",
+    "@vscode/test-electron": "^2.4.1",
+    "esbuild": "^0.24.2",
     "eslint": "^8.36.0",
-    "glob": "^8.1.0",
-    "mocha": "^10.2.0",
-    "typescript": "^5.0.4"
+    "glob": "^11.0.0",
+    "mocha": "^11.0.1",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "css-declaration-sorter": "^7.0.0",
-    "postcss": "^8.4.21",
+    "css-declaration-sorter": "^7.2.0",
+    "postcss": "^8.4.49",
     "postcss-less": "^6.0.0",
-    "postcss-scss": "^4.0.6"
+    "postcss-scss": "^4.0.9"
   }
 }
