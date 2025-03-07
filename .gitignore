@@ -2,5 +2,7 @@ out
 dist
 node_modules
 .vscode-test/
+.vscode-test-web/
 *.vsix
 sample.css
+*.local

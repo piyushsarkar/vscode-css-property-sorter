@@ -1,9 +1,9 @@
-import cssDeclarationSorter = require("css-declaration-sorter");
-import type { Selection, TextDocumentWillSaveEvent, TextEditor } from "vscode";
-import { Range, window } from "vscode";
+import cssDeclarationSorter from "css-declaration-sorter";
 import postcss from "postcss";
 import * as postcssLess from "postcss-less";
 import * as postcssScss from "postcss-scss";
+import type { Selection, TextDocumentWillSaveEvent, TextEditor } from "vscode";
+import { Range, window } from "vscode";
 import { getConfig, setConfig } from "./config";
 
 export const sortCss = async (textEditor: TextEditor) => {
@@ -21,12 +21,12 @@ export const sortCss = async (textEditor: TextEditor) => {
 
   const manualOrder: string[] = getConfig("manualOrder") || [];
   const manualOrderCompareFunction = (a: string, b: string) =>
-    manualOrder.indexOf(a) - manualOrder.indexOf(b);
+    (manualOrder.indexOf(a) - manualOrder.indexOf(b)) as -1 | 0 | 1;
 
-  const order: any =
+  const order =
     getConfig("sortingStrategy") === "manual"
       ? manualOrderCompareFunction
-      : getConfig("sortingStrategy");
+      : getConfig<"alphabetical" | "concentric-css" | "smacss">("sortingStrategy");
 
   let selection: Selection | Range = textEditor.selection;
   if (selection.isEmpty) {
@@ -65,5 +65,7 @@ export const sortOnSave = (e: TextDocumentWillSaveEvent) => {
 export const toggleSortOnSave = () => {
   const currentConfig = getConfig("sortOnSave");
   setConfig("sortOnSave", !currentConfig || undefined, true);
-  window.showInformationMessage(`Sort CSS properties on save is turned ${!currentConfig ? "on" : "off"}.`);
+  window.showInformationMessage(
+    `Sort CSS properties on save is turned ${!currentConfig ? "on" : "off"}.`
+  );
 };

@@ -11,7 +11,7 @@
     "url": "https://github.com/piyushsarkar/vscode-css-property-sorter.git"
   },
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.97.0"
   },
   "categories": [
     "Other"
@@ -22,21 +22,22 @@
     "onLanguage:sass",
     "onLanguage:less"
   ],
-  "main": "./out/extension.js",
   "icon": "images/icon.png",
+  "type": "module",
+  "browser": "./dist/extension.js",
   "scripts": {
-    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
-    "esbuild": "npm run esbuild-base -- --sourcemap",
-    "watch": "npm run esbuild-base -- --sourcemap --watch",
-    "compile": "npm run esbuild-base -- --sourcemap",
-    "tsc-compile": "tsc -p ./",
-    "tsc-watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "test-compile": "tsc -p ./",
-    "package": "npx @vscode/vsce package"
+    "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/test/suite/extensionTests.js",
+    "pretest": "pnpm run compile",
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node --experimental-strip-types esbuild.ts",
+    "watch-web": "npm-run-all -p watch-web:*",
+    "watch-web:esbuild": "node --experimental-strip-types esbuild.ts --watch",
+    "watch-web:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node --experimental-strip-types esbuild.ts --production",
+    "create-package": "pnpx @vscode/vsce package",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
   },
   "contributes": {
     "commands": [
@@ -155,24 +156,28 @@
     }
   },
   "devDependencies": {
-    "@types/glob": "^8.1.0",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@eslint/js": "^9.21.0",
+    "@types/assert": "^1.5.11",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.13.9",
     "@types/postcss-less": "^4.0.6",
-    "@types/vscode": "^1.96.0",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "@vscode/test-electron": "^2.4.1",
-    "esbuild": "^0.24.2",
-    "eslint": "^8.36.0",
-    "glob": "^11.0.0",
-    "mocha": "^11.0.1",
-    "typescript": "^5.7.2"
-  },
-  "dependencies": {
+    "@types/vscode": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "@vscode/test-web": "^0.0.67",
+    "assert": "^2.1.0",
     "css-declaration-sorter": "^7.2.0",
-    "postcss": "^8.4.49",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.21.0",
+    "glob": "^11.0.1",
+    "globals": "^16.0.0",
+    "mocha": "^11.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.3",
     "postcss-less": "^6.0.0",
-    "postcss-scss": "^4.0.9"
+    "postcss-scss": "^4.0.9",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
   }
 }

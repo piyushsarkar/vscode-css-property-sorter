@@ -4,60 +4,45 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "watch",
-      "group": "build",
-      "problemMatcher": {
-        "severity": "error",
-        "applyTo": "closedDocuments",
-        "source": "esbuild",
-        "fileLocation": "relative",
-        "owner": "typescript",
-        "pattern": [
-          {
-            "regexp": "> (.*?):([0-9]+):([0-9]+): (warning|error): (.+)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-          }
-        ],
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "\\[watch\\] build started"
-          },
-          "endsPattern": {
-            "regexp": "\\[watch\\] build finished"
-          }
-        }
+      "label": "watch-web",
+      "dependsOn": ["npm: watch-web:tsc", "npm: watch-web:esbuild"],
+      "presentation": {
+        "reveal": "never"
       },
-      "isBackground": true,
-      "label": "npm: watch"
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "type": "npm",
-      "script": "build",
+      "script": "watch-web:esbuild",
       "group": "build",
-      "problemMatcher": {
-        "severity": "error",
-        "applyTo": "closedDocuments",
-        "source": "esbuild",
-        "fileLocation": "relative",
-        "owner": "typescript",
-        "pattern": [
-          {
-            "regexp": "> (.*?):([0-9]+):([0-9]+): (warning|error): (.+)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-          }
-        ]
-      },
-      "label": "npm: build"
+      "problemMatcher": "$esbuild-watch",
+      "isBackground": true,
+      "label": "npm: watch-web:esbuild",
+      "presentation": {
+        "group": "watch",
+        "reveal": "never"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "watch-web:tsc",
+      "group": "build",
+      "problemMatcher": "$tsc-watch",
+      "isBackground": true,
+      "label": "npm: watch-web:tsc",
+      "presentation": {
+        "group": "watch",
+        "reveal": "never"
+      }
+    },
+    {
+      "label": "compile",
+      "type": "npm",
+      "script": "compile-web",
+      "problemMatcher": ["$tsc", "$esbuild"]
     }
   ]
 }
