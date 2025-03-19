@@ -16,8 +16,8 @@ export const sortCss = async (textEditor: TextEditor) => {
     currentFile.languageId === "scss" || currentFile.languageId === "sass"
       ? postcssScss
       : currentFile.languageId === "less"
-      ? postcssLess
-      : undefined;
+        ? postcssLess
+        : undefined;
 
   const manualOrder: string[] = getConfig("manualOrder") || [];
   const manualOrderCompareFunction = (a: string, b: string) =>
@@ -32,7 +32,7 @@ export const sortCss = async (textEditor: TextEditor) => {
   if (selection.isEmpty) {
     selection = new Range(
       currentFile.lineAt(0).range.start,
-      currentFile.lineAt(currentFile.lineCount - 1).range.end
+      currentFile.lineAt(currentFile.lineCount - 1).range.end,
     );
   }
 
@@ -66,6 +66,6 @@ export const toggleSortOnSave = () => {
   const currentConfig = getConfig("sortOnSave");
   setConfig("sortOnSave", !currentConfig || undefined, true);
   window.showInformationMessage(
-    `Sort CSS properties on save is turned ${!currentConfig ? "on" : "off"}.`
+    `Sort CSS properties on save is turned ${!currentConfig ? "on" : "off"}.`,
   );
 };
