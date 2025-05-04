@@ -5,13 +5,13 @@
   "publisher": "piyushsarkar",
   "author": "Piyush Sarkar",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/piyushsarkar/vscode-css-property-sorter.git"
   },
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.98.0"
   },
   "categories": [
     "Other"
@@ -20,7 +20,11 @@
     "onLanguage:css",
     "onLanguage:scss",
     "onLanguage:sass",
-    "onLanguage:less"
+    "onLanguage:less",
+    "onLanguage:html",
+    "onLanguage:vue",
+    "onLanguage:svelte",
+    "onLanguage:astro"
   ],
   "icon": "images/icon.png",
   "type": "module",
@@ -57,7 +61,7 @@
       {
         "key": "Alt+s",
         "command": "sortcss.run",
-        "when": "editorLangId == 'css' || editorLangId == 'scss' || editorLangId == 'less'"
+        "when": "editorLangId == 'css' || editorLangId == 'scss' || editorLangId == 'less' || editorLangId == 'html' || editorLangId == 'vue' || editorLangId == 'svelte' || editorLangId == 'astro'"
       }
     ],
     "configuration": {

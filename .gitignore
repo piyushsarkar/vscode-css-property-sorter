@@ -1,8 +1,8 @@
 out
 dist
 node_modules
+.DS_Store
 .vscode-test/
 .vscode-test-web/
 *.vsix
-sample.css
 *.local
