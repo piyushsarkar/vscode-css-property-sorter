@@ -1,8 +1,11 @@
 # Change Log
 
-## 0.1.1 - 2025-05-09
+## 0.1.2 - 2025-05-12
 
-### Fixed
+- Fix sort on save functionality ([#6](https://github.com/piyushsarkar/vscode-css-property-sorter/pull/6))
+- Fix CSS file support 
+
+## 0.1.1 - 2025-05-09
 
 - Compatibility with VS Code version 1.100.0
 
