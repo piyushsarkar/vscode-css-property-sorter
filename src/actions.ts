@@ -60,17 +60,22 @@ export const sortCss = async (textEditor: TextEditor) => {
   }
 
   if (sortedOutput !== text) {
-    textEditor.edit((editBuilder) => {
+    await textEditor.edit((editBuilder) => {
       editBuilder.replace(selection, sortedOutput);
     });
   }
 };
 
-export const sortOnSave = (e: TextDocumentWillSaveEvent) => {
+export const sortOnSave = async (e: TextDocumentWillSaveEvent) => {
   if (getConfig("sortOnSave") && supportedLanguages.has(e.document.languageId)) {
-    const editor = window.activeTextEditor;
+    const editor = window.visibleTextEditors.find(
+      (ed) => ed.document.uri.toString() === e.document.uri.toString(),
+    );
     if (editor) {
-      sortCss(editor);
+      await sortCss(editor);
+      if (e.document.isDirty) {
+        await e.document.save();
+      }
     }
   }
 };
