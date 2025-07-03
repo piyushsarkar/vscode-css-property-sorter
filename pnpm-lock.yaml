@@ -18,8 +18,8 @@ importers:
         specifier: ^10.0.10
         version: 10.0.10
       '@types/node':
-        specifier: ^24.0.4
-        version: 24.0.4
+        specifier: ^24.0.10
+        version: 24.0.10
       '@types/postcss-less':
         specifier: ^4.0.6
         version: 4.0.6
@@ -27,8 +27,8 @@ importers:
         specifier: ^1.101.0
         version: 1.101.0
       '@vscode/test-web':
-        specifier: ^0.0.70
-        version: 0.0.70
+        specifier: ^0.0.71
+        version: 0.0.71
       assert:
         specifier: ^2.1.0
         version: 2.1.0
@@ -48,8 +48,8 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
       oxlint:
-        specifier: ^1.3.0
-        version: 1.3.0
+        specifier: ^1.5.0
+        version: 1.5.0
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -239,47 +239,47 @@ packages:
     resolution: {integrity: sha512-x/iUDjcS90W69PryLDIMgFyV21YLTnG9zOpPXS7Bkt2b8AsY3zZsIpOLBkYr9fBcF3HbkKaER5hOBZLfpLgYNw==}
     engines: {node: '>= 14.0.0'}
 
-  '@koa/router@13.1.0':
-    resolution: {integrity: sha512-mNVu1nvkpSd8Q8gMebGbCkDWJ51ODetrFvLKYusej+V0ByD4btqHYnPIzTBLXnQMVUlm/oxVwqmWBY3zQfZilw==}
+  '@koa/router@13.1.1':
+    resolution: {integrity: sha512-JQEuMANYRVHs7lm7KY9PCIjkgJk73h4m4J+g2mkw2Vo1ugPZ17UJVqEH8F+HeAdjKz5do1OaLe7ArDz+z308gw==}
     engines: {node: '>= 18'}
 
-  '@oxlint/darwin-arm64@1.3.0':
-    resolution: {integrity: sha512-TcCaETXYfiEfS+u/gZNND4WwEEtnJJjqg8BIC56WiCQDduYTvmmbQ0vxtqdNXlFzlvmRpZCSs7qaqXNy8/8FLA==}
+  '@oxlint/darwin-arm64@1.5.0':
+    resolution: {integrity: sha512-CxzOtmOwQfaXXwAAJzPInNHhzldMeFsga7oe9mUp5bYIa/mm/Aqs0lxyAP9RZXoxaUHJTbfJovSsl6PU6gbCHw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@oxlint/darwin-x64@1.3.0':
-    resolution: {integrity: sha512-REgq9s1ZWuh++Vi+mUPNddLTp/D+iu+T8nLd3QM1dzQoBD/SZ7wRX3Mdv8QGT/m8dknmDBQuKAP6T47ox9HRSA==}
+  '@oxlint/darwin-x64@1.5.0':
+    resolution: {integrity: sha512-awD5yNGIRy2DrfzbrfeTSjZ+ITKr9+FGGvufquAB7kzfveFZNa621FpmCJ8MQY8hzXFD99iP7ClMNbaCzDfV/g==}
     cpu: [x64]
     os: [darwin]
 
-  '@oxlint/linux-arm64-gnu@1.3.0':
-    resolution: {integrity: sha512-QAS8AWKDcDeUe8mJaw/pF2D9+js8FbFTo75AiekZKNm9V6QAAiCkyvesmILD8RrStw9aV2D/apOD71vsfcDoGA==}
+  '@oxlint/linux-arm64-gnu@1.5.0':
+    resolution: {integrity: sha512-Nr8oUAEo20WIBo/qi76dBo5IGw2bQcl7d2YbaigOSQoAGfHR9xE9hAySYhIsnv7W0jtAZu1YTn0So7Tg0idExw==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint/linux-arm64-musl@1.3.0':
-    resolution: {integrity: sha512-rAbz0KFkk5GPdERoFO4ZUZmVkECnHXjRG0O2MeT5zY7ddlyZUjEk1cWjw+HCtWVdKkqhZJeNFMuEiRLkpzBIIw==}
+  '@oxlint/linux-arm64-musl@1.5.0':
+    resolution: {integrity: sha512-H2MBL0LZnl3GP09r12tFfcv3Y2fvetMD1TYbf5cetYCQ7hG7aIYTsuOTENjZ0SDK+L9Id35YWFNP3YES+3tsgw==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint/linux-x64-gnu@1.3.0':
-    resolution: {integrity: sha512-6uLO1WsJwCtVNGHtjXwg2TRvxQYttYJKMjSdv6RUXGWY1AI+/+yHzvu+phU/F40uNC7CFhFnqWDuPaSZ49hdAQ==}
+  '@oxlint/linux-x64-gnu@1.5.0':
+    resolution: {integrity: sha512-pRu77WJ+Uy0l6OkCjljnHuzOlSbMsN1mFDeAyzh8R69O44Mc2C7f1Fe+fbbW2kjgIwFQq8JkUffvPWr1MCMa+A==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint/linux-x64-musl@1.3.0':
-    resolution: {integrity: sha512-+vrmJUHgtJmgIo+L9eTP04NI/OQNCOZtQo6I49qGWc9cpr+0MnIh9KMcyAOxmzVTF5g+CF1I/1bUz4pk4I3LDw==}
+  '@oxlint/linux-x64-musl@1.5.0':
+    resolution: {integrity: sha512-qHG2YR+06pEAF4Gfp3T8hSaiI/IchdbuditnnVYxy32pN43vNMVDO7fU5hnNzJpxh6HozAD3uRrskBNvxgeSrQ==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint/win32-arm64@1.3.0':
-    resolution: {integrity: sha512-k+ETUVl+O3b8Rcd2PP5V3LqQ2QoN/TOX2f19XXHZEynbVLY3twLYPb3hLdXqoo7CKRq3RJdTfn1upHH48/qrZQ==}
+  '@oxlint/win32-arm64@1.5.0':
+    resolution: {integrity: sha512-/YRDPf1sPCF6B026buZTvh1vOF/pS+75aBDnxrDWIFhP1w3flqcI9v5QVjtq/sOZEWAoP2ee46CrxcxK5UuYag==}
     cpu: [arm64]
     os: [win32]
 
-  '@oxlint/win32-x64@1.3.0':
-    resolution: {integrity: sha512-nWSgK0fT02TQ/BiAUCd13BaobtHySkCDcQaL+NOmhgeb0tNWjtYiktuluahaIqFcYJPWczVlbs8DU/Eqo8vsug==}
+  '@oxlint/win32-x64@1.5.0':
+    resolution: {integrity: sha512-4HmkdYgDmejTxXESV1EBXd0zFLsoNJad+VrWZizzpTCmBnWEL5+tueEmEBBb4F55/sFZt8bdD//RbaTM9aOQJA==}
     cpu: [x64]
     os: [win32]
 
@@ -287,8 +287,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/browser-chromium@1.53.1':
-    resolution: {integrity: sha512-xsujbzJAgn3A0RVV00cT/XekdPUOqsJoy8WWyKdqhQnuA7A88m/x0MnbcaCeZcs2M5JVRqpbsFKRos+IIeZLjw==}
+  '@playwright/browser-chromium@1.53.2':
+    resolution: {integrity: sha512-M908LF0DJkSvNKljAF2v5WgaGn2xUBU5UIb2T+9KHvGL5TtQEzIRDtBv/i5qV2Y/MoNXCp8N/kFicOBeNpV4CQ==}
     engines: {node: '>=18'}
 
   '@types/assert@1.5.11':
@@ -297,8 +297,8 @@ packages:
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
-  '@types/node@24.0.4':
-    resolution: {integrity: sha512-ulyqAkrhnuNq9pB76DRBTkcS6YsmDALy6Ua63V8OhrOBgbcYt6IOdzpw5P1+dyRIyMerzLkeYWBeOXPpA9GMAA==}
+  '@types/node@24.0.10':
+    resolution: {integrity: sha512-ENHwaH+JIRTDIEEbDK6QSQntAYGtbvdDXnMXnZaZ6k13Du1dPMmprkEHIL7ok2Wl2aZevetwTAb5S+7yIF+enA==}
 
   '@types/postcss-less@4.0.6':
     resolution: {integrity: sha512-xBd7riBa5XEyty+SMMJS0kKdVw+ykN5hjbIuoPLAXDv9JoPS8pRZUriypZiQXKDL7085aegxLbtyo9krBpQzng==}
@@ -306,8 +306,8 @@ packages:
   '@types/vscode@1.101.0':
     resolution: {integrity: sha512-ZWf0IWa+NGegdW3iU42AcDTFHWW7fApLdkdnBqwYEtHVIBGbTu0ZNQKP/kX3Ds/uMJXIMQNAojHR4vexCEEz5Q==}
 
-  '@vscode/test-web@0.0.70':
-    resolution: {integrity: sha512-A/rGyPi7MA1btz6z37lmY84k087B804W/Et+3Gy+y4ycI3AgCdYn2Fwjb8kq0LP4E9rRGhKO7ACEndc6d9brAg==}
+  '@vscode/test-web@0.0.71':
+    resolution: {integrity: sha512-uj9a3A3QD1qBOw1ZL19SKNSG6c6rvP9N4XrMvBVKSeAOkmOQftAZoBERLMJPEaJ8Z5dF7aLmA79drjOBk+VTRg==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -370,8 +370,8 @@ packages:
   bare-events@2.5.4:
     resolution: {integrity: sha512-+gFfDkR8pj4/TrWCGUGWmJIkBwuxPS5F+a5yWjOHQt2hHvNZd5YLzadjmDUtFmMM4y429bnKLa8bYBMHcYdnQA==}
 
-  bare-fs@4.1.5:
-    resolution: {integrity: sha512-1zccWBMypln0jEE05LzZt+V/8y8AQsQQqxtklqaIyg5nu6OAYFhZxPXinJTSG+kU5qyNmeLgcn9AW7eHiCHVLA==}
+  bare-fs@4.1.6:
+    resolution: {integrity: sha512-25RsLF33BqooOEFNdMcEhMpJy8EoR88zSMrnOQOaM3USnOK2VmaJ1uaQEwPA6AQjrv1lXChScosN6CzbwbO9OQ==}
     engines: {bare: '>=1.16.0'}
     peerDependencies:
       bare-buffer: '*'
@@ -1101,8 +1101,8 @@ packages:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
     engines: {node: '>= 0.4'}
 
-  oxlint@1.3.0:
-    resolution: {integrity: sha512-PzAOmPxnXYpVF1q6h9pkOPH6uJ/44XrtFWJ8JcEMpoEq9HISNelD3lXhACtOAW8CArjLy/qSlu2KkyPxnXgctA==}
+  oxlint@1.5.0:
+    resolution: {integrity: sha512-Oh48XZy6BY2jE9xKwN4DjwpK/l7LOUHfPJsZ/rUKudWN1RXHXBnJkubsgIHlfTwWJGYJU2LAlyXKZcE46mD4OQ==}
     engines: {node: '>=8.*'}
     hasBin: true
 
@@ -1181,13 +1181,13 @@ packages:
     resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
     engines: {node: '>=4'}
 
-  playwright-core@1.53.1:
-    resolution: {integrity: sha512-Z46Oq7tLAyT0lGoFx4DOuB1IA9D1TPj0QkYxpPVUnGDqHHvDpCftu1J2hM2PiWsNMoZh8+LQaarAWcDfPBc6zg==}
+  playwright-core@1.53.2:
+    resolution: {integrity: sha512-ox/OytMy+2w1jcYEYlOo1Hhp8hZkLCximMTUTMBXjGUA1KoFfiSZ+DU+3a739jsPY0yoKH2TFy9S2fsJas8yAw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.53.1:
-    resolution: {integrity: sha512-LJ13YLr/ocweuwxyGf1XNFWIU4M2zUSo149Qbp+A4cpwDjsxRPj7k6H25LBrEHiEwxvRbD8HdwvQmRMSvquhYw==}
+  playwright@1.53.2:
+    resolution: {integrity: sha512-6K/qQxVFuVQhRQhFsVZ9fGeatxirtrpPgxzBYWyZLEXJzqYwuL4fuNmfOfD5et1tJE4GScKyPNeLhZeRwuTU3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1443,8 +1443,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tar-fs@3.0.10:
-    resolution: {integrity: sha512-C1SwlQGNLe/jPNqapK8epDsXME7CAJR5RL3GcE6KWx1d9OUByzoHVcbu1VPI8tevg9H8Alae0AApHHFGzrD5zA==}
+  tar-fs@3.1.0:
+    resolution: {integrity: sha512-5Mty5y/sOF1YWj1J6GiBodjlDc05CUR8PKXrsnFAiSG0xA+GHeWLovaZPYUDXkH/1iKRf2+M5+OrRgzC7O9b7w==}
 
   tar-stream@3.1.7:
     resolution: {integrity: sha512-qJj60CXt7IU1Ffyc3NJMjh6EkuCFej46zUqJ4J7pqYlThyd9bO0XBTmcOIhSzZJVWfsLks0+nle/j538YAW9RQ==}
@@ -1540,8 +1540,8 @@ packages:
     engines: {node: '>= 8'}
     hasBin: true
 
-  workerpool@9.3.2:
-    resolution: {integrity: sha512-Xz4Nm9c+LiBHhDR5bDLnNzmj6+5F+cyEAWPMkbs2awq/dYazR/efelZzUAjB/y3kNHL+uzkHvxVVpaOfGCPV7A==}
+  workerpool@9.3.3:
+    resolution: {integrity: sha512-slxCaKbYjEdFT/o2rH9xS1hf4uRDch1w7Uo+apxhZ+sf/1d9e0ZVkn42kPNGP2dgjIx6YFvSevj0zHvbWe2jdw==}
 
   wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
@@ -1682,48 +1682,51 @@ snapshots:
     dependencies:
       vary: 1.1.2
 
-  '@koa/router@13.1.0':
+  '@koa/router@13.1.1':
     dependencies:
+      debug: 4.4.1(supports-color@8.1.1)
       http-errors: 2.0.0
       koa-compose: 4.1.0
       path-to-regexp: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
 
-  '@oxlint/darwin-arm64@1.3.0':
+  '@oxlint/darwin-arm64@1.5.0':
     optional: true
 
-  '@oxlint/darwin-x64@1.3.0':
+  '@oxlint/darwin-x64@1.5.0':
     optional: true
 
-  '@oxlint/linux-arm64-gnu@1.3.0':
+  '@oxlint/linux-arm64-gnu@1.5.0':
     optional: true
 
-  '@oxlint/linux-arm64-musl@1.3.0':
+  '@oxlint/linux-arm64-musl@1.5.0':
     optional: true
 
-  '@oxlint/linux-x64-gnu@1.3.0':
+  '@oxlint/linux-x64-gnu@1.5.0':
     optional: true
 
-  '@oxlint/linux-x64-musl@1.3.0':
+  '@oxlint/linux-x64-musl@1.5.0':
     optional: true
 
-  '@oxlint/win32-arm64@1.3.0':
+  '@oxlint/win32-arm64@1.5.0':
     optional: true
 
-  '@oxlint/win32-x64@1.3.0':
+  '@oxlint/win32-x64@1.5.0':
     optional: true
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/browser-chromium@1.53.1':
+  '@playwright/browser-chromium@1.53.2':
     dependencies:
-      playwright-core: 1.53.1
+      playwright-core: 1.53.2
 
   '@types/assert@1.5.11': {}
 
   '@types/mocha@10.0.10': {}
 
-  '@types/node@24.0.4':
+  '@types/node@24.0.10':
     dependencies:
       undici-types: 7.8.0
 
@@ -1733,11 +1736,11 @@ snapshots:
 
   '@types/vscode@1.101.0': {}
 
-  '@vscode/test-web@0.0.70':
+  '@vscode/test-web@0.0.71':
     dependencies:
       '@koa/cors': 5.0.0
-      '@koa/router': 13.1.0
-      '@playwright/browser-chromium': 1.53.1
+      '@koa/router': 13.1.1
+      '@playwright/browser-chromium': 1.53.2
       gunzip-maybe: 1.4.2
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -1746,8 +1749,8 @@ snapshots:
       koa-mount: 4.2.0
       koa-static: 5.0.0
       minimist: 1.2.8
-      playwright: 1.53.1
-      tar-fs: 3.0.10
+      playwright: 1.53.2
+      tar-fs: 3.1.0
       tinyglobby: 0.2.14
       vscode-uri: 3.1.0
     transitivePeerDependencies:
@@ -1813,7 +1816,7 @@ snapshots:
   bare-events@2.5.4:
     optional: true
 
-  bare-fs@4.1.5:
+  bare-fs@4.1.6:
     dependencies:
       bare-events: 2.5.4
       bare-path: 3.0.0
@@ -2604,7 +2607,7 @@ snapshots:
       serialize-javascript: 6.0.2
       strip-json-comments: 3.1.1
       supports-color: 8.1.1
-      workerpool: 9.3.2
+      workerpool: 9.3.3
       yargs: 17.7.2
       yargs-parser: 21.1.1
       yargs-unparser: 2.0.0
@@ -2686,16 +2689,16 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
-  oxlint@1.3.0:
+  oxlint@1.5.0:
     optionalDependencies:
-      '@oxlint/darwin-arm64': 1.3.0
-      '@oxlint/darwin-x64': 1.3.0
-      '@oxlint/linux-arm64-gnu': 1.3.0
-      '@oxlint/linux-arm64-musl': 1.3.0
-      '@oxlint/linux-x64-gnu': 1.3.0
-      '@oxlint/linux-x64-musl': 1.3.0
-      '@oxlint/win32-arm64': 1.3.0
-      '@oxlint/win32-x64': 1.3.0
+      '@oxlint/darwin-arm64': 1.5.0
+      '@oxlint/darwin-x64': 1.5.0
+      '@oxlint/linux-arm64-gnu': 1.5.0
+      '@oxlint/linux-arm64-musl': 1.5.0
+      '@oxlint/linux-x64-gnu': 1.5.0
+      '@oxlint/linux-x64-musl': 1.5.0
+      '@oxlint/win32-arm64': 1.5.0
+      '@oxlint/win32-x64': 1.5.0
 
   p-limit@3.1.0:
     dependencies:
@@ -2756,11 +2759,11 @@ snapshots:
 
   pify@3.0.0: {}
 
-  playwright-core@1.53.1: {}
+  playwright-core@1.53.2: {}
 
-  playwright@1.53.1:
+  playwright@1.53.2:
     dependencies:
-      playwright-core: 1.53.1
+      playwright-core: 1.53.2
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -3062,12 +3065,12 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tar-fs@3.0.10:
+  tar-fs@3.1.0:
     dependencies:
       pump: 3.0.3
       tar-stream: 3.1.7
     optionalDependencies:
-      bare-fs: 4.1.5
+      bare-fs: 4.1.6
       bare-path: 3.0.0
     transitivePeerDependencies:
       - bare-buffer
@@ -3214,7 +3217,7 @@ snapshots:
     dependencies:
       isexe: 2.0.0
 
-  workerpool@9.3.2: {}
+  workerpool@9.3.3: {}
 
   wrap-ansi@7.0.0:
     dependencies:
