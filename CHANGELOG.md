@@ -1,9 +1,14 @@
 # Change Log
 
+## 0.2.0 - 2025-10-01
+
+- Added support for Frakto sorting strategy.
+- Added support for new CSS properties.
+
 ## 0.1.2 - 2025-05-12
 
 - Fix sort on save functionality ([#6](https://github.com/piyushsarkar/vscode-css-property-sorter/pull/6))
-- Fix CSS file support 
+- Fix CSS file support
 
 ## 0.1.1 - 2025-05-09
 

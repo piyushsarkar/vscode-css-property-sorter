@@ -5,13 +5,13 @@
   "publisher": "piyushsarkar",
   "author": "Piyush Sarkar",
   "license": "MIT",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/piyushsarkar/vscode-css-property-sorter.git"
   },
   "engines": {
-    "vscode": "^1.100.0"
+    "vscode": "^1.104.0"
   },
   "categories": [
     "Other"
@@ -80,12 +80,14 @@
             "Concentric CSS",
             "Alphabetical",
             "SMACSS",
+            "Frakto",
             "Manual"
           ],
           "enum": [
             "concentric-css",
             "alphabetical",
             "smacss",
+            "frakto",
             "manual"
           ],
           "enumDescriptions": [

@@ -28,7 +28,7 @@ This will sort the file whenever you save a css/scss/less file or any HTML/Vue/S
 This extension contributes the following settings:
 
 - `sortcss.sortOnSave`: Enable or disable sorting on save (default: `false`).
-- `sortcss.sortingStrategy`: Choose sorting strategy from `concentric-css`, `alphabetical`, `smacss` or `manual` (default: `concentric-css`).
+- `sortcss.sortingStrategy`: Choose sorting strategy from `concentric-css`, `alphabetical`, `smacss`, `frakto` or `manual` (default: `concentric-css`).
 - `sortcss.ignoredFiles`: Ignore files or path. Example: `[ 'sample.css', 'src' ]`
 - `sortcss.manualOrder`: Manual CSS sorting order. (set sortcss.sortingStrategy to `manual` to use this setting)
 

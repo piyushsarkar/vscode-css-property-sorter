@@ -3,7 +3,7 @@ import postcss from "postcss";
 import * as postcssLess from "postcss-less";
 import * as postcssScss from "postcss-scss";
 
-export type SortOrder = "alphabetical" | "concentric-css" | "smacss";
+export type SortOrder = "alphabetical" | "concentric-css" | "smacss" | "frakto";
 type SortFunction = (propertyNameA: string, propertyNameB: string) => -1 | 0 | 1;
 
 export const getPostcssSyntax = (languageId?: string) => {
