@@ -1,32 +1,18 @@
 {
   "name": "sort-css-properties",
   "displayName": "Sort CSS",
-  "description": "Sort CSS Properties",
-  "publisher": "piyushsarkar",
-  "author": "Piyush Sarkar",
-  "license": "MIT",
   "version": "0.2.0",
+  "description": "Sort CSS Properties",
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "author": "Piyush Sarkar",
   "repository": {
     "type": "git",
     "url": "https://github.com/piyushsarkar/vscode-css-property-sorter.git"
   },
-  "engines": {
-    "vscode": "^1.106.1"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:css",
-    "onLanguage:scss",
-    "onLanguage:sass",
-    "onLanguage:less",
-    "onLanguage:html",
-    "onLanguage:vue",
-    "onLanguage:svelte",
-    "onLanguage:astro"
-  ],
-  "icon": "images/icon.png",
+  "publisher": "piyushsarkar",
   "browser": "./dist/extension.js",
   "scripts": {
     "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/test/suite/extensionTests.js",
@@ -40,8 +26,30 @@
     "create-package": "pnpx @vscode/vsce package",
     "check-types": "tsc --noEmit",
     "lint": "oxlint",
-    "format": "prettier --write src/",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@types/assert": "^1.5.11",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.0.10",
+    "@types/postcss-less": "^4.0.7",
+    "@types/vscode": "^1.108.1",
+    "@vscode/test-web": "^0.0.78",
+    "assert": "^2.1.0",
+    "css-declaration-sorter": "^7.3.1",
+    "esbuild": "^0.27.2",
+    "glob": "^13.0.0",
+    "mocha": "^11.7.5",
+    "npm-run-all": "^4.1.5",
+    "oxfmt": "^0.26.0",
+    "oxlint": "^1.41.0",
+    "postcss": "^8.5.6",
+    "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.9",
+    "typescript": "^5.9.3"
   },
   "contributes": {
     "commands": [
@@ -161,25 +169,18 @@
       }
     }
   },
-  "devDependencies": {
-    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
-    "@types/assert": "^1.5.11",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^25.0.10",
-    "@types/postcss-less": "^4.0.7",
-    "@types/vscode": "^1.108.1",
-    "@vscode/test-web": "^0.0.78",
-    "assert": "^2.1.0",
-    "css-declaration-sorter": "^7.3.1",
-    "esbuild": "^0.27.2",
-    "glob": "^13.0.0",
-    "mocha": "^11.7.5",
-    "npm-run-all": "^4.1.5",
-    "oxlint": "^1.41.0",
-    "postcss": "^8.5.6",
-    "postcss-less": "^6.0.0",
-    "postcss-scss": "^4.0.9",
-    "prettier": "^3.8.1",
-    "typescript": "^5.9.3"
+  "activationEvents": [
+    "onLanguage:astro",
+    "onLanguage:css",
+    "onLanguage:html",
+    "onLanguage:less",
+    "onLanguage:sass",
+    "onLanguage:scss",
+    "onLanguage:svelte",
+    "onLanguage:vue"
+  ],
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.106.1"
   }
 }
