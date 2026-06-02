@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.1 - 2026-06-02
+
+- Updated dependencies.
+- Updated manual sorting documentation.
+
 ## 0.2.0 - 2025-10-01
 
 - Added support for Frakto sorting strategy.
