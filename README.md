@@ -32,6 +32,41 @@ This extension contributes the following settings:
 - `sortcss.ignoredFiles`: Ignore files or path. Example: `[ 'sample.css', 'src' ]`
 - `sortcss.manualOrder`: Manual CSS sorting order. (set sortcss.sortingStrategy to `manual` to use this setting)
 
+### Manual Ordering
+
+Manual ordering lets you define exactly which CSS properties come first and in what sequence.
+
+**1. Set the sorting strategy to `manual` in your VS Code settings (`settings.json`):**
+
+```json
+{
+  "sortcss.sortingStrategy": "manual"
+}
+```
+
+**2. Define your preferred property order using `sortcss.manualOrder`:**
+
+```json
+{
+  "sortcss.sortingStrategy": "manual",
+  "sortcss.manualOrder": [
+    "position",
+    "top",
+    "right",
+    "bottom",
+    "left",
+    "display",
+    "width",
+    "height",
+    "background",
+    "color",
+    "font-size"
+  ]
+}
+```
+
+Properties listed in `sortcss.manualOrder` are sorted in the order they appear in the array. Any CSS properties **not** included in the list are appended after the explicitly ordered ones.
+
 ## Supported File Types
 
 - CSS (.css)
