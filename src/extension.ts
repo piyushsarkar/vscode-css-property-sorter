@@ -8,7 +8,7 @@ let sortCssCommand: Disposable;
 
 // This method is called when your extension is activated
 export function activate(context: ExtensionContext) {
-  sortOnSaveListener = workspace.onWillSaveTextDocument((e) => sortOnSave(e));
+  sortOnSaveListener = workspace.onWillSaveTextDocument(sortOnSave);
   sortOnSaveCommand = commands.registerCommand("toggle-sort-on-save", toggleSortOnSave);
   sortCssCommand = commands.registerTextEditorCommand("sortcss.run", sortCss);
   context.subscriptions.push(sortOnSaveCommand, sortCssCommand, sortOnSaveListener);
