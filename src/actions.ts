@@ -1,15 +1,13 @@
-import type { Selection, TextDocumentWillSaveEvent, TextEditor } from "vscode";
-import { Range, window } from "vscode";
+import type { Selection, TextDocument, TextDocumentWillSaveEvent, TextEditor } from "vscode";
+import { Range, TextEdit, window } from "vscode";
 import { findStyleTagRanges, getStyleLangFromSelection } from "./utils";
 import { getConfig, setConfig, supportedNonCssFiles, supportedLanguages } from "./config";
 import { sorter, type SortOrder } from "./sorter";
 
-export const sortCss = async (textEditor: TextEditor) => {
-  const currentFile = textEditor.document;
-
+const getSortEdit = async (currentFile: TextDocument, textSelection?: Selection) => {
   /* check for ignored files and return if found */
   const ignoredFiles: string[] = getConfig("ignoredFiles") || [];
-  if (ignoredFiles.some((val) => textEditor.document.uri.path.includes(val))) return;
+  if (ignoredFiles.some((val) => currentFile.uri.path.includes(val))) return;
 
   const manualOrder: string[] = getConfig("manualOrder") || [];
   const manualOrderCompareFunction = (a: string, b: string) =>
@@ -19,17 +17,15 @@ export const sortCss = async (textEditor: TextEditor) => {
     getConfig("sortingStrategy") === "manual"
       ? manualOrderCompareFunction
       : getConfig<SortOrder>("sortingStrategy");
-
-  let selection: Selection | Range = textEditor.selection;
-  const isFullDocument = selection.isEmpty;
+  const isFullDocument = !textSelection || textSelection.isEmpty;
   const isNonCssFile = supportedNonCssFiles.has(currentFile.languageId);
 
-  if (isFullDocument) {
-    selection = new Range(
-      currentFile.lineAt(0).range.start,
-      currentFile.lineAt(currentFile.lineCount - 1).range.end,
-    );
-  }
+  const selection: Selection | Range = isFullDocument
+    ? new Range(
+        currentFile.lineAt(0).range.start,
+        currentFile.lineAt(currentFile.lineCount - 1).range.end,
+      )
+    : textSelection;
 
   const text = currentFile.getText(selection);
   let sortedOutput = text;
@@ -59,25 +55,32 @@ export const sortCss = async (textEditor: TextEditor) => {
     sortedOutput = output;
   }
 
-  if (sortedOutput !== text) {
-    await textEditor.edit((editBuilder) => {
-      editBuilder.replace(selection, sortedOutput);
-    });
-  }
+  if (sortedOutput === text) return;
+
+  return TextEdit.replace(selection, sortedOutput);
 };
 
-export const sortOnSave = async (e: TextDocumentWillSaveEvent) => {
-  if (getConfig("sortOnSave") && supportedLanguages.has(e.document.languageId)) {
-    const editor = window.visibleTextEditors.find(
-      (ed) => ed.document.uri.toString() === e.document.uri.toString(),
-    );
-    if (editor) {
-      await sortCss(editor);
-      if (e.document.isDirty) {
-        await e.document.save();
-      }
-    }
-  }
+export const sortCss = async (textEditor: TextEditor) => {
+  const edit = await getSortEdit(textEditor.document, textEditor.selection);
+  if (!edit) return;
+
+  await textEditor.edit((editBuilder) => {
+    editBuilder.replace(edit.range, edit.newText);
+  });
+};
+
+export const sortOnSave = (e: TextDocumentWillSaveEvent) => {
+  if (!getConfig("sortOnSave") || !supportedLanguages.has(e.document.languageId)) return;
+
+  e.waitUntil(
+    getSortEdit(e.document).then(
+      (edit) => (edit ? [edit] : []),
+      (error) => {
+        console.error(error);
+        return [];
+      },
+    ),
+  );
 };
 
 export const toggleSortOnSave = () => {
