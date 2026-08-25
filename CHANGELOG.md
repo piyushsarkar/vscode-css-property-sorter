@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.2 - 2026-08-25
+
+- Fixed sort on save
+
 ## 0.2.1 - 2026-06-02
 
 - Updated dependencies.
