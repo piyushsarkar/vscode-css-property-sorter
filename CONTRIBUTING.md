@@ -36,13 +36,14 @@ Before starting, ensure you have the following installed on your machine:
 1. **Fork the Repository**  
    Click the **Fork** button at the top right of the GitHub repository page to create your own copy.
 
-2. **Clone Your Fork**  
+2. **Clone Your Fork**
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/vscode-css-property-sorter.git
    cd vscode-css-property-sorter
    ```
 
-3. **Install Dependencies**  
+3. **Install Dependencies**
    ```bash
    npm install
    ```
@@ -141,13 +142,16 @@ Key files inside the `src/` directory:
 ## Pull Request Guidelines
 
 1. **Create a Feature Branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
-   *(or `fix/your-bug-fix`)*
+
+   _(or `fix/your-bug-fix`)_
 
 2. **Make & Validate Your Changes**
    Before committing, verify that all checks pass:
+
    ```bash
    npm run check-types
    npm run lint
@@ -157,6 +161,7 @@ Key files inside the `src/` directory:
 
 3. **Commit & Push**
    Write clear and descriptive commit messages, then push to your fork:
+
    ```bash
    git push origin feature/your-feature-name
    ```
