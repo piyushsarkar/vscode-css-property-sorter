@@ -35,8 +35,8 @@ export const sorter = async (
       originalOutput: text,
       range,
     };
-  } catch (error) {
-    console.error(error);
+  } catch {
+    /* unparsable css is expected while editing, so fall back to the untouched text */
     return {
       output: text,
       originalOutput: text,
