@@ -11,8 +11,10 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - uses: actions/stale@v10
+      - name: Close normal inactive issues
+        uses: actions/stale@v11
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-issue-stale: 30
           days-before-issue-close: 14
           stale-issue-label: "stale"
@@ -20,6 +22,26 @@ jobs:
             This issue has been inactive for 30 days and has been marked as stale.
             It will be closed automatically if there is no further activity.
           close-issue-message: "This issue was closed because it has been inactive for 14 days since being marked as stale."
+          close-issue-reason: "not_planned"
+          exempt-issue-labels: "feature,enhancement,bug,waiting-for-reporter"
           days-before-pr-stale: -1
           days-before-pr-close: -1
+
+      - name: Complete issues waiting for reporter
+        uses: actions/stale@v11
+        with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          only-issue-labels: "waiting-for-reporter"
+          days-before-issue-stale: 30
+          days-before-issue-close: 14
+          stale-issue-label: "stale"
+          stale-issue-message: >
+            This issue has been inactive for 30 days and has been marked as stale.
+            It will be automatically closed in 14 days if there is no further activity.
+            If this issue still needs attention, please leave a comment.
+          close-issue-message: >
+            This issue has been closed as completed after remaining inactive for 14 days.
+            If you still need assistance, please reopen the issue or create a new comment with the relevant details.
+          close-issue-reason: "completed"
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
